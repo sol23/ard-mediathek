@@ -24,7 +24,7 @@ def main(argv):
 
     amd = ArdMediathekDownloader(args.url)
     amd.filename = args.filename
-    amd.quality = args.quality
+    amd.quality = args.quality - 1
     amd.derive_filename = args.derivefilename
     with contextlib.suppress(KeyboardInterrupt):
         amd.download()

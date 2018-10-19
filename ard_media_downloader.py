@@ -23,7 +23,7 @@ class ArdMediathekDownloader(object):
         self._filename = None
         self.default_filename = "video.mp4"
         self._derive_filename = False
-        self._quality = 3
+        self._quality = 2
 
     def validate_url(self, url):
         """
@@ -97,7 +97,9 @@ class ArdMediathekDownloader(object):
     def _get_video_by_quality(self, media):
         medias = self._get_all_stream_urls_grouped_by_quality(media)
         if self.quality in medias:
-            url = medias[self.quality][0]
+            sorted(medias[self.quality])
+            print(medias[self.quality])
+            url = medias[self.quality][-1]
             if not url.startswith('http:') and not url.startswith('https:'):
                 url = "http:" + url
 
