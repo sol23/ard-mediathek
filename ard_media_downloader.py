@@ -98,7 +98,6 @@ class ArdMediathekDownloader(object):
         medias = self._get_all_stream_urls_grouped_by_quality(media)
         if self.quality in medias:
             sorted(medias[self.quality])
-            print(medias[self.quality])
             url = medias[self.quality][-1]
             if not url.startswith('http:') and not url.startswith('https:'):
                 url = "http:" + url
